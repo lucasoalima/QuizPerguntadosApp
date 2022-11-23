@@ -8,7 +8,11 @@ public class Modelclass {
     String opcaoC;
     String resposta;
 
-    public Modelclass (String questao, String opcaoA, String opcaoB, String opcaoC, String resposta){
+    public Modelclass(){
+
+    }
+
+    public Modelclass(String questao, String opcaoA, String opcaoB, String opcaoC){
         Questao = questao;
         this.opcaoA = opcaoA;
         this.opcaoB = opcaoB;

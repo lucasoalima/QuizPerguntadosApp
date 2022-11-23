@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "102320472985",
+    "project_id": "perguntados-a968e",
+    "storage_bucket": "perguntados-a968e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102320472985:android:881a33b8ec1e5798e80908",
+        "android_client_info": {
+          "package_name": "com.example.perguntados"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102320472985-ffee417nuavctv85e4332picdr2j2k96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTTiQSTu-OVTVEx3zq536FJt32JhTOzVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102320472985-ffee417nuavctv85e4332picdr2j2k96.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
