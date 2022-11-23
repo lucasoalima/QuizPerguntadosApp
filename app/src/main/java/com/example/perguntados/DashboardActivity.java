@@ -45,9 +45,9 @@ public class DashboardActivity extends AppCompatActivity {
         Collections.shuffle(allQuestionsList);
         modelclass=list.get(index);
 
-        cardOA.setBackgroundColor(getResources().getColor(R.color.white));
-        cardOB.setBackgroundColor(getResources().getColor(R.color.white));
-        cardOC.setBackgroundColor(getResources().getColor(R.color.white));
+        //        cardOA.setBackgroundColor(getResources().getColor(R.color.white));
+        //        cardOC.setBackgroundColor(getResources().getColor(R.color.white));
+        //        cardOC.setBackgroundColor(getResources().getColor(R.color.white));
 
 
         nextBtn.setClickable(false);
