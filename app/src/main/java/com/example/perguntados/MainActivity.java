@@ -31,7 +31,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     public static ArrayList<Modelclass> list;
-
     DatabaseReference databaseReference;
 
     @Override
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         list = new ArrayList<>();
-        databaseReference = FirebaseDatabase.getInstance().getReference("Questao");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Question");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
