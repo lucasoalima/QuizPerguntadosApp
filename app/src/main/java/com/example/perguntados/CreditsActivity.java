@@ -30,6 +30,7 @@ public class CreditsActivity extends AppCompatActivity {
             data.add(String.valueOf(2) + "Bruno Miguel Groth");
             data.add(String.valueOf(3) + "Mayara Fernandes");
             data.add(String.valueOf(4) + "Rodrigo Azevedo");
+            data.add(String.valueOf(4) + "Gabriel Skalecki Cardon");
 
         return data;
     }

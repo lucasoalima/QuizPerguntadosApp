@@ -80,6 +80,8 @@
 
     <androidx.cardview.widget.CardView
         app:cardCornerRadius="5dp"
+        android:id="@+id/cardA"
+        android:onClick="OptionAClick"
         android:layout_marginStart="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
@@ -89,58 +91,56 @@
         android:layout_marginLeft="10dp">
 
         <TextView
-            android:onClick="OptionAClick"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/card_option1"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:text="A"
-            />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:onClick="OptionBClick"
-        app:cardCornerRadius="5dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_marginEnd="10dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp">
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/card_option2"
-            android:textColor="@color/black"
             android:layout_gravity="center"
             android:text="B"
-            />
+            android:textColor="@color/black" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:onClick="OptionCClick"
-        app:cardCornerRadius="5dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/cardB"
         android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp">
+        android:layout_marginRight="10dp"
+        android:onClick="OptionBClick"
+        app:cardCornerRadius="5dp">
 
         <TextView
+            android:id="@+id/card_option2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="B"
+            android:textColor="@color/black" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardC"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:onClick="OptionCClick"
+        app:cardCornerRadius="5dp">
+
+        <TextView
             android:id="@+id/card_option3"
-            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="C"
-            />
+            android:textColor="@color/black" />
 
     </androidx.cardview.widget.CardView>
 

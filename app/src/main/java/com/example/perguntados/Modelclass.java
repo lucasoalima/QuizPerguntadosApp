@@ -12,7 +12,7 @@ public class Modelclass {
 
     }
 
-    public Modelclass(String questao, String opcaoA, String opcaoB, String opcaoC){
+    public Modelclass(String questao, String opcaoA, String opcaoB, String opcaoC, String resposta){
         Questao = questao;
         this.opcaoA = opcaoA;
         this.opcaoB = opcaoB;

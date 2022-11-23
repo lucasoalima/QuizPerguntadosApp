@@ -45,9 +45,9 @@ public class DashboardActivity extends AppCompatActivity {
         Collections.shuffle(allQuestionsList);
         modelclass=list.get(index);
 
-        //        cardOA.setBackgroundColor(getResources().getColor(R.color.white));
-        //        cardOC.setBackgroundColor(getResources().getColor(R.color.white));
-        //        cardOC.setBackgroundColor(getResources().getColor(R.color.white));
+//                cardOA.setBackgroundColor(getResources().getColor(R.color.white));
+//                cardOC.setBackgroundColor(getResources().getColor(R.color.white));
+//                cardOC.setBackgroundColor(getResources().getColor(R.color.white));
 
 
         nextBtn.setClickable(false);
@@ -126,9 +126,12 @@ public class DashboardActivity extends AppCompatActivity {
 
         cardOA.setBackgroundColor(getResources().getColor(R.color.red));
 
+
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+              //  cardOA.setBackgroundColor(getResources().getColor(R.color.red));
+
                 erradoCount++;
                 if(index<list.size()-1){
 
@@ -177,7 +180,7 @@ public class DashboardActivity extends AppCompatActivity {
         disableButton();
         nextBtn.setClickable(true);
         if(modelclass.getOpcaoA().equals(modelclass.getResposta())){
-            cardOA.setBackgroundColor(getResources().getColor(R.color.green));
+            cardOB.setBackgroundColor(getResources().getColor(R.color.green));
             if(index < list.size() -1){
                 Correto(cardOA);
             }

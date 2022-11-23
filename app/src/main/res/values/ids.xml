@@ -3,5 +3,5 @@
     <item name="cardA" type="id"></item>
     <item name="cardB" type="id"></item>
     <item name="cardC" type="id"></item>
-    <item name="textName" type="id">textName</item>
+    <item name="textName" type="id"></item>
 </resources>
