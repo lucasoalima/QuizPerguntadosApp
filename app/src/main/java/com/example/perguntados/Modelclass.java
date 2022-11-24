@@ -1,6 +1,8 @@
 package com.example.perguntados;
 
-public class Modelclass {
+import java.io.Serializable;
+
+public class Modelclass implements Serializable {
 
     String Questao;
     String opcaoA;

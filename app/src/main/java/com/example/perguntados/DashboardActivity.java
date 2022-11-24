@@ -1,7 +1,5 @@
 package com.example.perguntados;
 
-import static com.example.perguntados.MainActivity.list;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -15,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -41,9 +40,9 @@ public class DashboardActivity extends AppCompatActivity {
 
         Hooks();
 
-        allQuestionsList=list;
+        allQuestionsList= (ArrayList<Modelclass>) getIntent().getSerializableExtra("list");
         Collections.shuffle(allQuestionsList);
-        modelclass=list.get(index);
+        modelclass=allQuestionsList.get(index);
 
 //                cardOA.setBackgroundColor(getResources().getColor(R.color.white));
 //                cardOC.setBackgroundColor(getResources().getColor(R.color.white));
@@ -64,20 +63,30 @@ public class DashboardActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Dialog dialog = new Dialog(DashboardActivity.this, R.style.Dialoge);
-                dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
-                dialog.setContentView(R.layout.time_out_dialog);
 
-                dialog.show();
 
-                dialog.findViewById(R.id.btn_tryAgain).setOnClickListener(new View.OnClickListener() {
+                runOnUiThread(new Runnable() {
                     @Override
-                    public void onClick(View view) {
+                    public void run() {
 
-                        Intent intent = new Intent(DashboardActivity.this,MainActivity.class);
-                        startActivity(intent);
+                        Dialog dialog = new Dialog(DashboardActivity.this, R.style.Dialoge);
+                        dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+                        dialog.setContentView(R.layout.time_out_dialog);
+
+                        dialog.show();
+
+                        dialog.findViewById(R.id.btn_tryAgain).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                Intent intent = new Intent(DashboardActivity.this,MainActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+
                     }
                 });
+
             }
         }.start();
     }
@@ -115,9 +124,16 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 corretoCount++;
-                index++;
-                modelclass=list.get(index);
-                setAllData();
+
+                if(index<allQuestionsList.size()-1){
+
+                    index++;
+                    modelclass = allQuestionsList.get(index);
+                    setAllData();
+                    resetColor();
+                }else{
+                    GameWon();
+                }
             }
         });
 
@@ -133,10 +149,10 @@ public class DashboardActivity extends AppCompatActivity {
               //  cardOA.setBackgroundColor(getResources().getColor(R.color.red));
 
                 erradoCount++;
-                if(index<list.size()-1){
+                if(index<allQuestionsList.size()-1){
 
                     index++;
-                    modelclass = list.get(index);
+                    modelclass = allQuestionsList.get(index);
                     setAllData();
                     resetColor();
                 }else{
@@ -181,7 +197,7 @@ public class DashboardActivity extends AppCompatActivity {
         nextBtn.setClickable(true);
         if(modelclass.getOpcaoA().equals(modelclass.getResposta())){
             cardOB.setBackgroundColor(getResources().getColor(R.color.green));
-            if(index < list.size() -1){
+            if(index < allQuestionsList.size() -1){
                 Correto(cardOA);
             }
             else{
@@ -198,7 +214,7 @@ public class DashboardActivity extends AppCompatActivity {
         nextBtn.setClickable(true);
         if(modelclass.getOpcaoB().equals(modelclass.getResposta())){
             cardOB.setBackgroundColor(getResources().getColor(R.color.green));
-            if(index < list.size() -1){
+            if(index < allQuestionsList.size() -1){
                Correto(cardOB);
             }
             else{
@@ -215,7 +231,7 @@ public class DashboardActivity extends AppCompatActivity {
         nextBtn.setClickable(true);
         if(modelclass.getOpcaoC().equals(modelclass.getResposta())){
             cardOC.setBackgroundColor(getResources().getColor(R.color.green));
-            if(index < list.size() -1){
+            if(index < allQuestionsList.size() -1){
                 Correto(cardOC);
             }
             else{

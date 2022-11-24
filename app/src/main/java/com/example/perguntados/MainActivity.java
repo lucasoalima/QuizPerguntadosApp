@@ -30,7 +30,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static ArrayList<Modelclass> list;
+    public ArrayList<Modelclass> list;
     DatabaseReference databaseReference;
 
     @Override
@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                     list.add(modelclass);
                 }
                 Intent intent = new Intent(MainActivity.this,DashboardActivity.class);
+
+                intent.putExtra("list",list);
                 startActivity(intent);
             }
 
