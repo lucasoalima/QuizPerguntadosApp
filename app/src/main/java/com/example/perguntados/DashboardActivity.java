@@ -3,6 +3,7 @@ package com.example.perguntados;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -62,6 +63,11 @@ public class DashboardActivity extends AppCompatActivity {
             }
 
             @Override
+            protected void finalize() throws Throwable {
+                super.finalize();
+            }
+
+            @Override
             public void onFinish() {
 
 
@@ -69,9 +75,15 @@ public class DashboardActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        Dialog dialog = new Dialog(DashboardActivity.this, R.style.Dialoge);
-                        dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
-                        dialog.setContentView(R.layout.time_out_dialog);
+                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(DashboardActivity.this);
+                        alertDialog.setView(R.layout.time_out_dialog);
+                        alertDialog.create().show();
+
+
+
+                        //Dialog dialog = new Dialog(DashboardActivity.this, R.style.Dialoge);
+                       // dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+                        /*dialog.setContentView(R.layout.time_out_dialog);
 
                         dialog.show();
 
@@ -82,7 +94,7 @@ public class DashboardActivity extends AppCompatActivity {
                                 Intent intent = new Intent(DashboardActivity.this,MainActivity.class);
                                 startActivity(intent);
                             }
-                        });
+                        });*/
 
                     }
                 });
@@ -131,6 +143,7 @@ public class DashboardActivity extends AppCompatActivity {
                     modelclass = allQuestionsList.get(index);
                     setAllData();
                     resetColor();
+                    enableButton();
                 }else{
                     GameWon();
                 }
@@ -154,6 +167,7 @@ public class DashboardActivity extends AppCompatActivity {
                     index++;
                     modelclass = allQuestionsList.get(index);
                     setAllData();
+                    enableButton();
                     resetColor();
                 }else{
                     GameWon();
@@ -196,7 +210,7 @@ public class DashboardActivity extends AppCompatActivity {
         disableButton();
         nextBtn.setClickable(true);
         if(modelclass.getOpcaoA().equals(modelclass.getResposta())){
-            cardOB.setBackgroundColor(getResources().getColor(R.color.green));
+            cardOA.setBackgroundColor(getResources().getColor(R.color.green));
             if(index < allQuestionsList.size() -1){
                 Correto(cardOA);
             }
